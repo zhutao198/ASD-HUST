@@ -1,4 +1,4 @@
-# ST Holter
+# ASD HUST
 
 This repo is the official implementation of "Artificial intelligence-enabled ECG detection of atrial septal defect among adults: A novel diagnostic tool". 
 
