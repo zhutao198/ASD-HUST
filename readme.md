@@ -14,7 +14,7 @@ We developed an AI-ECG algorithm to detect ASD in adults using a CNN with a resi
 
 to train the model
 ```
-python3 train.py 
+python3 train.py
 ```
 
 to predict
