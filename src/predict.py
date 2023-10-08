@@ -18,14 +18,14 @@ model_path="k10"
 class SASDModel:
     def __init__(self):
         self.device = torch.device("cuda:0")
-        model_list = [i for i in os.listdir('../model/{}'.format(model_path)) if 'bestf1' in i]
+        model_list = [i for i in os.listdir('../model/{}'.format(model_path)) if 'model_' in i]
         self.load_mlist = [self.load_model('../model/{}/{}'.format(model_path,i)) for i in model_list]
 
     def load_model(self, model_name):
         m = ECGNet(num_classes=2).to(self.device)
-        checkpoint = torch.load(model_name, map_location={'cuda:2': 'cuda:0', 'cuda:1': 'cuda:0', 'cuda:3': 'cuda:0',
-                                                          'cuda:4': 'cuda:0','cuda:5': 'cuda:0','cuda:6': 'cuda:0',
-                                                          'cuda:7': 'cuda:0','cuda:8': 'cuda:0'})
+        checkpoint = torch.load(model_name, map_location={'cuda:2': 'cuda:6', 'cuda:1': 'cuda:6', 'cuda:3': 'cuda:6',
+                                                          'cuda:4': 'cuda:6','cuda:5': 'cuda:6','cuda:6': 'cuda:6',
+                                                          'cuda:7': 'cuda:6','cuda:8': 'cuda:6'})
         m.load_state_dict(checkpoint['model'])
         m.eval()
         return m
